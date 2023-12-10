@@ -1,0 +1,18 @@
+/* body{
+    background-image: url('./assets/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+} */
+.navbar{
+    background-color: transparent;
+}
+
+.brand , .list_item{
+    color: black !important;
+}
+
+.button{
+    background-color: white;
+    border: px solid black;
+}
