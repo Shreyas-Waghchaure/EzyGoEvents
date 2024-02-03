@@ -7,12 +7,3 @@
 .navbar{
     background-color: transparent;
 }
-
-.brand , .list_item{
-    color: black !important;
-}
-
-.button{
-    background-color: white;
-    border: px solid black;
-}

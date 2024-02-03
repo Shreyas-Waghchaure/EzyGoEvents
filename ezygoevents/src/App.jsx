@@ -1,13 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './Componants/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Componants/Home';
+import Discover from './Componants/Discover';
 function App() {
   return (
     <>
-      <NavBar/>
       <Home/>
+      <Discover/>
     </>
   );
 }
