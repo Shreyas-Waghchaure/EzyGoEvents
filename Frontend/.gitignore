@@ -1,6 +1,7 @@
 # Compiled class file
 *.class
-
+#dependancies
+./ezygoevents/node_module
 # Log file
 *.log
 

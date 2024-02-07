@@ -1,0 +1,22 @@
+.signup-btn{
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    height: 55px;
+}
+.heading h2{
+    font-weight: 600;
+}
+
+.signup-from{
+    height: 55px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}
+
+.img-signup{
+    height: 35rem;
+    width: 35rem;
+    margin-left: 15rem;
+    margin-top: 4rem;
+}

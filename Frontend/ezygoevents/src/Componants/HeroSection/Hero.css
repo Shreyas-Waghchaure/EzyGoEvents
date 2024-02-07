@@ -1,0 +1,11 @@
+.img-hero{
+    height: 35rem;
+    width: 45rem;
+    margin-left: 10rem;
+}
+.container{
+    margin: 2px;
+}
+body{
+    font-family: "Space Grotesk";
+}

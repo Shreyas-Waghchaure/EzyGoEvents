@@ -1,0 +1,12 @@
+.heading{
+    margin: 25px;
+}
+.services{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.first div{
+    padding:15px;
+}

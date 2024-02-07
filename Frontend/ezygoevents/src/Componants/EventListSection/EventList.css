@@ -1,0 +1,21 @@
+.heading{
+    margin-top: 20px;
+    padding: 8px;
+
+}
+.cards{
+    display: flex;
+    justify-content: center;
+}
+.card-deck{
+    margin: 25px;
+    width: 75rem;
+}
+.card-img-top{
+    height: 15rem;
+}
+
+.card-btn{
+   position: relative;
+   left: 0;
+}
