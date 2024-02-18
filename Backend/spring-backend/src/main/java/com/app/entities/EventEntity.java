@@ -69,4 +69,7 @@ public class EventEntity extends BaseEntity
 	
 	@OneToMany(mappedBy = "event",cascade=CascadeType.ALL,orphanRemoval = true)
 	private List<TicketEntity> tickets = new ArrayList<>();
+	
+	
+	
 }
