@@ -2,6 +2,7 @@ package com.app.controllers;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.dto.UserReqDto;
+import com.app.dto.SignUpDTO;
 import com.app.dto.UserRespDto;
 import com.app.services.UserService;
 
@@ -28,14 +29,13 @@ public class UserController{
 		List <UserRespDto> users = uSvc.getAll();
 		return users;
 	}
-	
 	@GetMapping("/user/{id}")
 	public UserRespDto getById(@PathVariable Long id) {
 		return uSvc.getById(id);
 	}
 	
-	@PostMapping("user/add")
-	public UserRespDto insertUser(@RequestBody UserReqDto user) {
+	@PostMapping("user/signup")
+	public UserRespDto insertUser(@RequestBody SignUpDTO user) {
 		return uSvc.insertUser(user);
 	}
 	
@@ -43,8 +43,8 @@ public class UserController{
 	public void deleteUser(@PathVariable Long id) {
 		uSvc.deleteUser(id);
 	}
-	@PutMapping("user/update")
-	public UserRespDto updateUser(@RequestBody UserReqDto user) {
-		return uSvc.updateUser(user);
+	@PutMapping("user/update/{id}")
+	public UserRespDto updateUser(@RequestBody SignUpDTO user,@PathVariable Long id) {
+		return uSvc.updateUser(user,id);
 	}
 }
