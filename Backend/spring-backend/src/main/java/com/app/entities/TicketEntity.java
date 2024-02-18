@@ -30,7 +30,7 @@ import lombok.Setter;
 public class TicketEntity extends BaseEntity 
 {
 	@Column(length = 5)
-	private boolean isPaid; 
+	private String isPaid; 
 	
 	@NotNull(message = "Please provide a date")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")

@@ -1,5 +1,6 @@
 import React from "react";
 import holder from "../Assets/holder.jpg";
+
 const Card = () => {
   return (
     <div className="card">
