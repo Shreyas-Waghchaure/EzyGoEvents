@@ -8,8 +8,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,14 +27,13 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString(exclude = "password")
-
 public class UserEntity extends BaseEntity 
 {
 	@Column(length = 20)
 	private String name;
 	
 	@Column(length = 10)
-	private int mobileNo;
+	private String mobileNo;
 	
 	@Column(length = 30, unique = true)
 	private String email;
