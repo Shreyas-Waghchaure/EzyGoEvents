@@ -48,7 +48,7 @@ public class UserEntity extends BaseEntity
 	@OneToMany(mappedBy = "user",cascade=CascadeType.ALL,orphanRemoval = true)
 	private List<EventEntity> events = new ArrayList<>();
 	
-	@OneToMany(mappedBy = "user",cascade=CascadeType.ALL,orphanRemoval = true)
+	@OneToMany(mappedBy = "user")
 	private List<TicketEntity> tickets = new ArrayList<>();
 	
 	//Helper Methods

@@ -14,7 +14,6 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -24,6 +23,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "events")
@@ -31,6 +31,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 public class EventEntity extends BaseEntity 
 {
 	@Column(length = 50)
@@ -55,9 +56,11 @@ public class EventEntity extends BaseEntity
 	@Column(length = 100)
 	private String description;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "status_id")
-	private EventStatus status;
+	@Column(name = "status")
+	@Enumerated(EnumType.STRING)
+	private Status status;
+	@Column(name="host_Email")
+	private String hostEmail;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(length = 30)

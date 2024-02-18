@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import com.app.entities.EventCategory;
-import com.app.entities.EventStatus;
+import com.app.entities.Status;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -29,7 +29,7 @@ public class EventsRespDTO {
 
 	private String description;
 
-	private EventStatus status;
+	private Status status;
 
 	private EventCategory category;
 }

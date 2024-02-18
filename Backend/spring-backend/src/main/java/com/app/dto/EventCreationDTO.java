@@ -4,13 +4,17 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import com.app.entities.EventCategory;
-import com.app.entities.EventStatus;
+import com.app.entities.Status;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
-@Getter
 @Setter
+@Getter
+@ToString
 public class EventCreationDTO {
 	
 	private String eventName;
@@ -26,9 +30,9 @@ public class EventCreationDTO {
 	private double price;
 
 	private String description;
-
-	private EventStatus status;
-
-	private EventCategory category;
+	
+	private String hostEmail;
+	
+	private String category;
 	
 }
