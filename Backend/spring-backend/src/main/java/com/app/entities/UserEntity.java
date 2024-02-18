@@ -31,7 +31,7 @@ public class UserEntity extends BaseEntity
 	private String name;
 	
 	@Column(length = 10)
-	private int mobileNo;
+	private String mobileNo;
 	
 	@Column(length = 30, unique = true)
 	private String email;
