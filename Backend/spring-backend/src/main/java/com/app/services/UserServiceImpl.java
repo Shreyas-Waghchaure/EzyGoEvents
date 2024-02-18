@@ -1,7 +1,6 @@
 package com.app.services;
 
 import java.util.List;
-
 import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
@@ -10,7 +9,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.custom_exceptions.ResourceNotException;
 import com.app.dao.UserDao;
+import com.app.dto.LoginDTO;
 import com.app.dto.SignUpDTO;
 import com.app.dto.UserRespDto;
 import com.app.entities.UserEntity;
@@ -69,5 +70,16 @@ public class UserServiceImpl implements UserService {
 		
 		return mapper.map(usr,UserRespDto.class);
 	}
-
+	
+	@Override
+	public UserRespDto authenticateUser(LoginDTO request) 
+	{
+		UserEntity user = dao.
+						getByEmailAndPassword(request.getEmail(), request.getPassword()).
+						orElseThrow(() ->
+						new ResourceNotException("Invalid Email or Password !"));
+		
+		return mapper.map(user, UserRespDto.class);		
+	
+	}
 }

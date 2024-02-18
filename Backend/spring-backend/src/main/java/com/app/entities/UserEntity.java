@@ -51,6 +51,12 @@ public class UserEntity extends BaseEntity
 	@OneToMany(mappedBy = "user")
 	private List<TicketEntity> tickets = new ArrayList<>();
 	
+	public UserEntity(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
+	
 	//Helper Methods
 	public void addEvent(EventEntity e)
 	{
