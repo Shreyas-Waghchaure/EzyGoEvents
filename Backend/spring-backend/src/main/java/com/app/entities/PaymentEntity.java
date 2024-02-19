@@ -1,12 +1,12 @@
 package com.app.entities;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -28,9 +28,16 @@ public class PaymentEntity extends BaseEntity
 	
 	@Enumerated(EnumType.STRING)
 	@Column(length = 20)
-	private Mode mode;
+	private PaymentMode mode;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@Column(nullable = false)
+	private String transactionId;
+	
+	@Column(nullable = false)
+	@Enumerated(EnumType.STRING)
+	private PaymentStatus status;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ticket_id")
 	private TicketEntity ticket;
 }

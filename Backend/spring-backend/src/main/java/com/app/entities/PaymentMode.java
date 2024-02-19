@@ -1,6 +1,6 @@
 package com.app.entities;
 
-public enum Mode 
+public enum PaymentMode 
 {
 	ONLINE, CARD, UPI 
 }
