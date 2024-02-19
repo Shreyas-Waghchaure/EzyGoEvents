@@ -70,5 +70,11 @@ public class EventServiceImpl implements EventService
 		eDao.save(event);
 		return "Event send for verification";		
 	}
+	@Override
+	public void updateStatus(Long id) {
+	EventEntity event = eDao.findById(id).orElseThrow(()->new ResourceNotFoundException("Event not found"));
+		event.setStatus(Status.CONFIRMED);
+		eDao.save(event);
+	}
 
 }

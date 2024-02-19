@@ -2,5 +2,5 @@ package com.app.entities;
 
 public enum EventCategory 
 {
-	CULTURAL, SPORTING , MUSIC, EXHIBITIONS
+	CULTURAL, SPORTING , MUSIC, EXHIBITIONS, TECHNICAL
 }

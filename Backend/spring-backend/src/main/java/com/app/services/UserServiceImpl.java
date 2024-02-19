@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserRespDto updateUser(SignUpDTO user,Long id) {
-		UserEntity usr = dao.findById(id).get();
+		UserEntity usr = dao.findById(id).orElseThrow(()->new ResourceNotFoundException("Update user failed"));
 		if(usr !=null) {
 		UserEntity modUser = mapper.map(user, UserEntity.class);
 			usr.setName(modUser.getName());
@@ -79,5 +79,13 @@ public class UserServiceImpl implements UserService {
 		
 		return mapper.map(user, UserRespDto.class);		
 	
+	}
+
+	@Override
+	public List<UserRespDto> getByRole() {
+		List<UserEntity> hosts = dao.findByRole(UserRole.HOST);
+		hosts.stream().forEach(System.out::println);
+		return hosts.stream().map(h->mapper.map(h, UserRespDto.class)).collect(Collectors.toList());
+		
 	}
 }
