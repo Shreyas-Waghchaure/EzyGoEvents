@@ -16,7 +16,8 @@ import com.app.dto.EventCreationDTO;
 import com.app.dto.EventsRespDTO;
 import com.app.entities.EventCategory;
 import com.app.entities.EventEntity;
-import com.app.entities.Status;
+import com.app.entities.EventStatus;
+import com.app.entities.EventStatus;
 import com.app.entities.UserEntity;
 import com.app.entities.UserRole;
 
@@ -62,7 +63,7 @@ public class EventServiceImpl implements EventService
 	EventEntity event =mapper.map(newEvent,EventEntity.class);
 	System.out.println(event);
 	System.out.println(newEvent);
-		event.setStatus(Status.PENDING);
+		event.setStatus(EventStatus.PENDING);
 		event.setCategory(EventCategory.valueOf(newEvent.getCategory().toUpperCase()));
 		UserEntity host = uDao.findByEmail(event.getHostEmail());
 		host.addEvent(event);

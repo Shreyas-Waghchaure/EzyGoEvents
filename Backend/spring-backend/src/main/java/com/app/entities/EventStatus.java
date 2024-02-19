@@ -1,6 +1,6 @@
 package com.app.entities;
 
-public enum Status 
+public enum EventStatus 
 {
 	PENDING, COMPLETED, CANCELLED , CONFIRMED, OPEN_TO_REGISTRATION, CLOSE_TO_REGISTRATION
 }

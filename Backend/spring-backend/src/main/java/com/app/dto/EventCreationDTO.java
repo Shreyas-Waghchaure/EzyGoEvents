@@ -3,12 +3,7 @@ package com.app.dto;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import com.app.entities.EventCategory;
-import com.app.entities.Status;
-
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 

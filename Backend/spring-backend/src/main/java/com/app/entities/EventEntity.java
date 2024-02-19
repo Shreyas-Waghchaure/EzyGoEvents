@@ -58,7 +58,7 @@ public class EventEntity extends BaseEntity
 	
 	@Column(name = "status")
 	@Enumerated(EnumType.STRING)
-	private Status status;
+	private EventStatus status;
 	@Column(name="host_Email")
 	private String hostEmail;
 	
