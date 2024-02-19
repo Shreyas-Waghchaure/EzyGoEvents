@@ -9,7 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.app.custom_exceptions.ResourceNotException;
+import com.app.custom_exceptions.ResourceNotFoundException;
 import com.app.dao.UserDao;
 import com.app.dto.LoginDTO;
 import com.app.dto.SignUpDTO;
@@ -34,11 +34,10 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserRespDto getById(Long id) {
 		
-		UserEntity user = dao.findById(id).get();
-		
+		UserEntity user = dao.findById(id).
+				orElseThrow(() -> new ResourceNotFoundException("Invalid id"));		
 		return mapper.map(user, UserRespDto.class); 	
 	}
-
 
 	@Override
 	public void deleteUser(Long id) {
@@ -47,7 +46,6 @@ public class UserServiceImpl implements UserService {
 			dao.deleteById(id);
 		}
 	}
-
 
 	@Override
 	public UserRespDto insertUser(SignUpDTO user) {
@@ -77,7 +75,7 @@ public class UserServiceImpl implements UserService {
 		UserEntity user = dao.
 						getByEmailAndPassword(request.getEmail(), request.getPassword()).
 						orElseThrow(() ->
-						new ResourceNotException("Invalid Email or Password !"));
+						new ResourceNotFoundException("Invalid Email or Password !"));
 		
 		return mapper.map(user, UserRespDto.class);		
 	
