@@ -43,7 +43,7 @@ public class EventsController {
 	
 	@DeleteMapping("/events/{id}")
 	public void DeleteEvent(@PathVariable Long id){
-		eSvc.deleteEvenet(id);
+		eSvc.deleteEvent(id);
 	}
 	
 	@PostMapping("/events/add")
