@@ -24,6 +24,7 @@ function RoutingPath()
         <Route path="login" element={<Login/>}/>
         <Route path="Events/:id" element={<Details/>}/>
         <Route path="signup" element={<Signup/>}/>
+        <Route path="details/:id" element={<Details/>}/>
     </Routes>
     </>
 
