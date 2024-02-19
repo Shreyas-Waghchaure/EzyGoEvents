@@ -9,10 +9,15 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.custom_exceptions.ResourceNotException;
 import com.app.dao.EventsDao;
+import com.app.dao.UserDao;
 import com.app.dto.EventsRespDTO;
+import com.app.dto.LoginDTO;
+import com.app.dto.UserRespDto;
 import com.app.entities.EventCategory;
 import com.app.entities.EventEntity;
+import com.app.entities.UserEntity;
 
 @Service
 @Transactional
@@ -39,5 +44,6 @@ public class EventServiceImpl implements EventService{
 		EventEntity event = eDao.findById(id).get();
 		return mapper.map(event, EventsRespDTO.class);
 	}
+	
 
 }

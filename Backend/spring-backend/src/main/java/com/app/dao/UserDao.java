@@ -1,7 +1,11 @@
 package com.app.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import com.app.entities.UserEntity;
 
-public interface UserDao extends JpaRepository<UserEntity, Long>{}
+public interface UserDao extends JpaRepository<UserEntity, Long>
+{
+	Optional<UserEntity> getByEmailAndPassword(String email, String password);
+}
