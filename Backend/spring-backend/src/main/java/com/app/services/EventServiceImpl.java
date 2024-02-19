@@ -74,7 +74,7 @@ public class EventServiceImpl implements EventService
 	@Override
 	public void updateStatus(Long id) {
 	EventEntity event = eDao.findById(id).orElseThrow(()->new ResourceNotFoundException("Event not found"));
-		event.setStatus(Status.CONFIRMED);
+		event.setStatus(EventStatus.CONFIRMED);
 		eDao.save(event);
 	}
 
