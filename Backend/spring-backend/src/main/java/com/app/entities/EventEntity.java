@@ -31,7 +31,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 public class EventEntity extends BaseEntity 
 {
 	@Column(length = 50)

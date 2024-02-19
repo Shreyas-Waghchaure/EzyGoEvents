@@ -17,5 +17,7 @@ public interface EventService {
 	public void deleteEvent(Long id);
 
 	public String addEvent(EventCreationDTO newEvent);
+
+	public void updateStatus(Long id);
 	
 }

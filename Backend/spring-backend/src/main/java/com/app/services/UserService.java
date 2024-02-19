@@ -22,6 +22,8 @@ public interface UserService {
 
 	public UserRespDto updateUser(SignUpDTO user,Long id);
 
-	UserRespDto authenticateUser(LoginDTO request);	
+	UserRespDto authenticateUser(LoginDTO request);
+
+	public List<UserRespDto> getByRole();	
 
 }
