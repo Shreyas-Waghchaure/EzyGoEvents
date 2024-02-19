@@ -6,8 +6,9 @@ import lombok.Getter;
 import lombok.Setter;
 @Getter
 @Setter
-public class UserRespDto {
-	
+public class UserRespDto 
+{
+	private Long id;	
 	private String name;
 	private String mobileNo;
 	private String email;

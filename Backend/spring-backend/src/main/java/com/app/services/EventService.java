@@ -13,6 +13,7 @@ public interface EventService {
 
 	public EventsRespDTO getById(Long id);
 
+
 	public void deleteEvenet(Long id);
 
 	public String addEvent(EventCreationDTO newEvent);

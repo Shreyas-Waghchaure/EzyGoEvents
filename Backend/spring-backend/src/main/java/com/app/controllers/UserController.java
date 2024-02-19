@@ -2,6 +2,7 @@ package com.app.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.dto.LoginDTO;
 import com.app.dto.SignUpDTO;
 import com.app.dto.UserRespDto;
 import com.app.services.UserService;
@@ -46,5 +48,11 @@ public class UserController{
 	@PutMapping("user/update/{id}")
 	public UserRespDto updateUser(@RequestBody SignUpDTO user,@PathVariable Long id) {
 		return uSvc.updateUser(user,id);
+	}
+	
+	@PostMapping("user/signin")
+	public UserRespDto authenticateUser(@RequestBody @Valid LoginDTO dto)
+	{
+		return uSvc.authenticateUser(dto);
 	}
 }
