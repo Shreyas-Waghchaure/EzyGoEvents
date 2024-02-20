@@ -26,8 +26,7 @@ If formated
 use ezygoevents;
 insert into users values(default, "om@123", "7578691245", "om", "om@login", "USER");
 insert into event_status values(default, "OPEN_TO_REGISTRATION");
-insert into events values(default, "CULTURAL", "Pune", "Holi", "2024-03-10", "Holi-Hai","abc@gmail" 500,
-"PENDING" "07:00:00", "Karve-Nagar", 1);
+insert into events values(default, "CULTURAL", "Pune", "Holi", "2024-03-10", "Holi-Hai","abc@gmail", null,  500,"PENDING", "07:00:00", "Karve-Nagar", 1);
 insert into tickets value(default, "2024-02-15", "True", 1, 1);
 insert into payment values(default, 500, "ONLINE", 1);
 
