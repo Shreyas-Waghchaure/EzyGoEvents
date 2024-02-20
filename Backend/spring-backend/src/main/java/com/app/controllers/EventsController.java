@@ -69,7 +69,7 @@ public class EventsController {
 		return "User Creation failed";		
 	}
 	
-	@PostMapping(value = "/images/{eventId}", consumes = "multipart/form-data")
+	@PostMapping(value = "events/images/{eventId}", consumes = "multipart/form-data")
 	public ResponseEntity<?> uploadImage(@PathVariable Long eventId, @RequestParam MultipartFile imageFile) throws IOException
 	{
 		return ResponseEntity.status(HttpStatus.CREATED).body(imgService.uploadImage(eventId, imageFile));
