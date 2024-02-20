@@ -62,6 +62,12 @@ public class EventEntity extends BaseEntity
 	@Column(name="host_Email")
 	private String hostEmail;
 	
+	@Column(name = "image_path")
+	private String imagePath;
+	
+	@Column(name = "no_of_seats")
+	private int noOfSeats;
+	
 	@Enumerated(EnumType.STRING)
 	@Column(length = 30)
 	private EventCategory category;
@@ -76,5 +82,16 @@ public class EventEntity extends BaseEntity
 	@OneToMany(mappedBy = "event",cascade=CascadeType.ALL,orphanRemoval = true)
 	private List<EventRegistration> eventList = new ArrayList<>();
 	
-	private String imagePath;
+	//Helper Methods for Tickets
+	public void addTicket(TicketEntity e)
+	{
+		this.tickets.add(e);
+		e.setEvent(this);
+	}
+			
+	public void removeTicket(TicketEntity e)
+	{
+		this.tickets.remove(e);
+		e.setEvent(null); 
+	}
 }

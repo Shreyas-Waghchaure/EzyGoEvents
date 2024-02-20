@@ -60,7 +60,7 @@ public class UserEntity extends BaseEntity
 		this.password = password;
 	}
 	
-	//Helper Methods
+	//Helper Methods for events
 	public void addEvent(EventEntity e)
 	{
 		this.events.add(e);
@@ -72,4 +72,17 @@ public class UserEntity extends BaseEntity
 		this.events.remove(e);
 		e.setUser(null);
 	}
+	
+	//Helper Methods for Tickets
+		public void addTicket(TicketEntity e)
+		{
+			this.tickets.add(e);
+			e.setUser(this);
+		}
+		
+		public void removeTicket(TicketEntity e)
+		{
+			this.tickets.remove(e);
+			e.setUser(null); 
+		}
 }

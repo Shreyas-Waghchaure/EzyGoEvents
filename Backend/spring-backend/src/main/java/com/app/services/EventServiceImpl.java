@@ -60,7 +60,7 @@ public class EventServiceImpl implements EventService
 	}
 	@Override
 	public String addEvent(EventCreationDTO newEvent) {
-	EventEntity event =mapper.map(newEvent,EventEntity.class);
+	EventEntity event = mapper.map(newEvent,EventEntity.class);
 	System.out.println(event);
 	System.out.println(newEvent);
 		event.setStatus(EventStatus.PENDING);
