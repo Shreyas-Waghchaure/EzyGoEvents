@@ -11,7 +11,7 @@ function ShowNavbar({ children }) {
 
   useEffect(() => {
     console.log(location);
-    if(location.pathname==='/login' || location.pathname==='/signup' ){
+    if(location.pathname==='/login' || location.pathname==='/signup'|| location.pathname === "/admin/dashboard"|| location.pathname === "/admin/dashboard/hosts"|| location.pathname === "/admin/dashboard/events" ){
       setShowNavbar(false);
     } 
       

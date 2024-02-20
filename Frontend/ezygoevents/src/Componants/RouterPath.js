@@ -8,6 +8,9 @@ import Home from "../Pages/Home";
 import Signup from "../Pages/Signup";
 import ShowNavbar from "./Navbar/ShowNavBar";
 import Explore from "../Pages/Explore";
+import AdminDashboard from "../Pages/AdminDashboard";
+import AllHosts from "./adminDashboard/AllHosts";
+import AllEvents from "./adminDashboard/AllEvents";
 
 
 function RoutingPath()
@@ -25,6 +28,9 @@ function RoutingPath()
         <Route path="Events/:id" element={<Details/>}/>
         <Route path="signup" element={<Signup/>}/>
         <Route path="details/:id" element={<Details/>}/>
+        <Route path="admin/dashboard" element={<AdminDashboard/>}/>
+        <Route path="admin/dashboard/hosts" element={<AllHosts/>}/>
+        <Route path="admin/dashboard/events" element={<AllEvents/>}/>
     </Routes>
     </>
 
