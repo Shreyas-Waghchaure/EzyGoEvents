@@ -43,7 +43,4 @@ public class TicketEntity extends BaseEntity
     @Enumerated(EnumType.STRING)
     private TicketStatus status; 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "payment_id")
-    private PaymentEntity payment; 
 }

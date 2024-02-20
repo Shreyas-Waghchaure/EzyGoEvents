@@ -1,5 +1,8 @@
 package com.app.services;
 
-public interface TicketService {
+import com.app.dto.TicketDTO;
 
+public interface TicketService 
+{
+	public void saveDetails(TicketDTO dto);
 }
