@@ -31,57 +31,6 @@
     display: none;
 }
 
-@media screen and (max-width: 940px){
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    
-      .navbar-nav {
-        margin-top: 10px;
-      }
-    
-      .nav-item {
-        margin: 10px 0;
-      }
-    
-      .mobile-nav-icon {
-        display: block; /* Show the icon for mobile view */
-      }
-    
-      .navbar-nav {
-        display: "${isMobile ? "flex" : "none"}";
-        flex-direction: column;
-      }
-    .nav-link-mobile{
-        position: absolute;
-        display: block;
-        left: 0;
-        top: 75px;
-        transition: all 0.5s ease-out;
-        width: 100%;
-    }
-    .menu-itemslink{
-        background-color: gray;
-        color: Black !important;
-        text-align: center;
-        padding: 32px;
-        width: 100%;
-        transition: all 0.5s ease;
-    }   
-
-    .mobile-nav-icon{
-        display: block;
-        position: absolute;
-        font-size: 30px;
-        color: black;
-        border: none;
-        outline: none;
-        top: 15px;
-        right: 25px;
-    }
-}
-
 
 /* Regular styles */
 

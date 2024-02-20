@@ -19,7 +19,7 @@ const component = <>
         Easily find and book tickets for various social gathering <br />events happening in your locality.
         </div>
         <div>
-            <a href="" style={{'textDecoration':'none','color':'black'}}>Explore {'>'}</a>
+            <a href="/" style={{'textDecoration':'none','color':'black'}}>Explore {'>'}</a>
         </div>
         </div>
         <div className='first'>
