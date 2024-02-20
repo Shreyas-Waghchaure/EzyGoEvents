@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class PaymentServiceImpl implements PaymentService {
-
+public class PaymentServiceImpl implements PaymentService 
+{
+	
 }

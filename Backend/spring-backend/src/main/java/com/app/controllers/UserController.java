@@ -28,6 +28,7 @@ public class UserController{
 	}
 	@Autowired
 	UserService uSvc;
+	
 	@GetMapping("/users")
 	public List<UserRespDto> getAll(){
 		List <UserRespDto> users = uSvc.getAll();
