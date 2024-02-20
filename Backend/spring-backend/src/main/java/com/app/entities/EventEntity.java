@@ -12,6 +12,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -51,13 +52,13 @@ public class EventEntity extends BaseEntity
 	
 	@Column(nullable = false)
 	private double price;
-	
-	@Column(length = 100)
+
 	private String description;
 	
 	@Column(name = "status")
 	@Enumerated(EnumType.STRING)
 	private EventStatus status;
+	
 	@Column(name="host_Email")
 	private String hostEmail;
 	
@@ -72,6 +73,8 @@ public class EventEntity extends BaseEntity
 	@OneToMany(mappedBy = "event",cascade=CascadeType.ALL,orphanRemoval = true)
 	private List<TicketEntity> tickets = new ArrayList<>();
 	
+	@OneToMany(mappedBy = "event",cascade=CascadeType.ALL,orphanRemoval = true)
+	private List<EventRegistration> eventList = new ArrayList<>();
 	
-	
+	private String imagePath;
 }
