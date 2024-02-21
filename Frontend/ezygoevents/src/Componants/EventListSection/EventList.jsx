@@ -33,13 +33,12 @@ const EventList = () => {
           Book your tickets now!
         </p>
       </div>
-      <div className="cards">
-        <div className="card-deck d-flex justify-content-center">
+      <div className='d-flex justify-content-around mt-4'>
 
-          {eventarr.slice(0,3).map(e=> e.status === "CONFIRMED"?<ExploreCard key={e.id} event={e} getData={fetchData} />:<h6 align="center">No Event Avilable</h6>)}
+          {eventarr.slice(0,3).map(e=> e.status === "CONFIRMED"?<ExploreCard key={e.id} event={e} img ={`./images/${e.imagePath.split('/').pop()}`} getData={fetchData} />:<h6 align="center">No Event Avilable</h6>)}
 
         </div>
-    </div>
+
     <div align="center">
 
 <Link to={"/explore"}>

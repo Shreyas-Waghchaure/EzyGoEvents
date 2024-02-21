@@ -11,6 +11,8 @@ import Explore from "../Pages/Explore";
 import AdminDashboard from "../Pages/AdminDashboard";
 import AllHosts from "./adminDashboard/AllHosts";
 import AllEvents from "./adminDashboard/AllEvents";
+import EventRegister from "../Pages/EventRegister";
+import EventOfCategory from "../Pages/EventOfCategory";
 
 
 function RoutingPath()
@@ -27,6 +29,8 @@ function RoutingPath()
         <Route path="login" element={<Login/>}/>
         <Route path="Events/:id" element={<Details/>}/>
         <Route path="signup" element={<Signup/>}/>
+        <Route path="event/register" element={<EventRegister/>}/>
+        <Route path="events/category/:cat" element={<EventOfCategory/>}/>
         <Route path="details/:id" element={<Details/>}/>
         <Route path="admin/dashboard" element={<AdminDashboard/>}/>
         <Route path="admin/dashboard/hosts" element={<AllHosts/>}/>

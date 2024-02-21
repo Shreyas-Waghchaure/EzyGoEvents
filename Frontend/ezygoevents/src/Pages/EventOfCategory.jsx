@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ExploreCard from '../Componants/ExploreCardSection/ExploreCard';
 import ExploreService from '../Services/ExploreService';
 
+const EventOfCategory = () => {
 
-const Explore = () => {
-
-  const[eventarr,setEventArr] = useState([]);
-
+    const[eventarr,setEventArr] = useState([]);
+    const param = useParams();
   const fetchData = ()=>{
-    ExploreService.getAllEvents().then(
+    ExploreService.getByCategory(param.cat).then(
       (result)=>{
         setEventArr([...result.data]);
       }
@@ -38,7 +38,6 @@ const Explore = () => {
     </>
   );
   return component;
-};
+}
 
-
-export default Explore;
+export default EventOfCategory

@@ -32,7 +32,7 @@ public class TicketServiceImpl implements TicketService
 	@Override
 	public void saveDetails(TicketDTO dto) 
 	{
-		TicketEntity ticket = null;
+		TicketEntity ticket = new TicketEntity();
 		ticket.setPrice(dto.getEventPrice());
 		EventEntity event =  eDao.findById(dto.getEventId()).orElseThrow(() -> new ResourceNotFoundException("Invalid id !"));
 		ticket.setEvent(event);

@@ -16,6 +16,9 @@ const Details = (props) => {
     price:"",
     description:"",
     status: "",
+    hostEmail:"",
+	  imagePath:"",
+	  noOfSeats:"",
     category: ""
   });
   useEffect(() => {
@@ -23,7 +26,7 @@ const Details = (props) => {
     ExploreService.getById(params.id)
       .then((result) => {
         setEventdetails({ ...result.data });
-        console.log(result.data);
+        console.log(result.data.imagePath.split('/').pop());
       })
       .catch((err) => {
         console.log(err);
@@ -33,7 +36,7 @@ const Details = (props) => {
     <div className="container py-5">
       <div className="row d-flex flex-column flex-md-row align-items-center">
         <div className="col-md-6">
-          <img src={image2} className="event-image m-5 w-75 h-75" />
+          <img src={`../images/${eventDetails.imagePath.split('/').pop()}`} className="event-image m-5 w-75 h-75" />
         </div>
         <div className="col-md-6 event-details">
           
@@ -56,6 +59,9 @@ const Details = (props) => {
           <p className="event-description">
             {eventDetails.description}
           </p>
+          <p>     
+              Seats Available: <i className="fas fa-tags"></i> {eventDetails.noOfSeats}
+           </p>
           <button
               type="button"
               class="btn mt-3"
