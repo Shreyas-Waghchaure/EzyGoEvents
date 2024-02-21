@@ -76,7 +76,6 @@ public class UserServiceImpl implements UserService {
 						getByEmailAndPassword(request.getEmail(), request.getPassword()).
 						orElseThrow(() ->
 						new ResourceNotFoundException("Invalid Email or Password !"));
-		
 		return mapper.map(user, UserRespDto.class);		
 	
 	}

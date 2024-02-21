@@ -13,6 +13,8 @@ class ExploreService{
         return axios.get(baseUrl+"/events/category/"+category)
     }
 
+    
+
 }
 
 export default new ExploreService;

@@ -3,6 +3,8 @@ package com.app.dto;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import javax.persistence.Column;
+
 import com.app.entities.EventCategory;
 import com.app.entities.*;
 
@@ -17,7 +19,7 @@ public class EventsRespDTO {
 	
 	private String eventName;
 
-	private String venue; // Check for repetitions (Venue vs location)
+	private String venue;
 	
 	private String city;
 
@@ -30,6 +32,12 @@ public class EventsRespDTO {
 	private String description;
 
 	private EventStatus status;
-
+	
+	private String hostEmail;
+	
+	private String imagePath;
+	
+	private int noOfSeats;
+	
 	private EventCategory category;
 }

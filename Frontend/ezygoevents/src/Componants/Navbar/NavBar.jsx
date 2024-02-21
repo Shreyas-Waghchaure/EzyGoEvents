@@ -26,7 +26,7 @@ const NavBar = () => {
                 Categories
               </NavLink>
             </li>
-            <Link to={"/"}>
+            <Link to={"/event/register"}>
             <button type="button" className="host-btn ml-2 p-2">Host an Event</button>
             </Link>
             <Link to={"/login"}>

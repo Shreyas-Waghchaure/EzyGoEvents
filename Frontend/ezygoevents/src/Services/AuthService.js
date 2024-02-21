@@ -8,6 +8,10 @@ class AuthService{
     signUp(details){
         return axios.post(baseUrl+"/user/signup",details);
     }
+
+    signIn(details){
+        return axios.post(baseUrl+"/user/signin",details);
+    }
 }
 
 

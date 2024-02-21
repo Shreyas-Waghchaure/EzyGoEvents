@@ -13,14 +13,16 @@ const ExploreCard = (props) => {
         style={{ margin: "20px 0", fontWeight: "bold" }}
       >
         <div style={{ margin: "0 40px", display: "flex" }}>
-          <Card style={{ width: "22rem" }}>
-            <Card.Img variant="top" src={image2} />
+          <Card style={{ width: "24rem" }}>
+            {console.log(props.img)}
+            <Card.Img variant="top" src={props.img === null ? image2:props.img} />
             <Card.Body>
-              <h3>{props.event.eventName}</h3>
+              <h4>{props.event.eventName}</h4>
               <Card.Text>
                 Date : {props.event.eventDate} <br />
                 Location : {props.event.venue},{props.event.city} <br />
-                Time : {props.event.time}
+                Time : {props.event.time} <br/>
+                Number of Seats: {props.event.noOfSeats}
               </Card.Text>
               <Link to={"/details/" + props.event.id}>
               <Button

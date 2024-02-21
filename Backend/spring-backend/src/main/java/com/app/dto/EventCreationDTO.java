@@ -28,6 +28,8 @@ public class EventCreationDTO {
 	
 	private String hostEmail;
 	
+	private Integer noOfSeats;
+	
 	private String category;
 	
 }
