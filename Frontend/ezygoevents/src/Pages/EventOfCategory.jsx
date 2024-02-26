@@ -31,7 +31,10 @@ const EventOfCategory = () => {
                 </div >            
         <div>
         {eventarr.map(e=>
-        e.status === "CONFIRMED"?<ExploreCard key={e.id} event={e} img={`./images/${e.imagePath.split('/').pop()}`} getData={fetchData} />:"")}
+        e.status === "CONFIRMED"?<ExploreCard key={e.id} event={e} img={`../../images/${e.imagePath.split('/').pop()}`}  getData={fetchData} />:"")
+        }
+
+{eventarr.map(e=>   {console.log(e.imagePath)})}
         </div>
         
     </div>

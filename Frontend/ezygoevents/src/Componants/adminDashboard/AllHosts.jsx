@@ -19,24 +19,24 @@ const AllHosts = () => {
       useEffect(()=>{
             fetchData();
          },[])
-
-
+        
 
   return (
     <div>
     <Sidebar/>    
     <div class="card bg-light mb-3 mt-3">
-  <div class="card-body d-flex justify-content-around">
-    <div>Host Name</div>
-    <div>Host email</div>
-    <div>Host mobile</div>
-  </div>
+      <h1 align="center">Hosts</h1>
 </div>
     {hostarr.map(h=> <div class="card bg-light mb-3 mt-3">
   <div class="card-body d-flex justify-content-around">
     <div>{h.name}</div>
     <div>{h.email}</div>
     <div>{h.mobileNo}</div>
+    <div>
+      <button type="button" className="btn btn-danger" id="del-btn" name="del-btn" value="delete" onClick={()=>{
+        adminService.deleteHost(h.id)
+      }}>Delete Host</button>
+    </div>
   </div>
 </div>)}
    

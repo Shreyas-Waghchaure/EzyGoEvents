@@ -47,7 +47,7 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-        <div className="col-md-6 col-sm-12" style={{"backgroundColor":"white"}}>
+        <div className="col-md-6 col-sm-12 " style={{"backgroundColor":"white"}}>
           <img src={homepage} className="img-hero"></img>
         </div>
       </div>

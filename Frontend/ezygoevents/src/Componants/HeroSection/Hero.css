@@ -1,4 +1,6 @@
 .img-hero{
+
+    position: relative;
     height: 35rem;
     width: 45rem;
     margin-left: 10rem;

@@ -14,6 +14,10 @@ class AdminService{
         return axios.put(baseUrl+"/admin/dashboard/event/updateStatus/"+id)
     }
 
+    deleteHost(id){
+        return axios.delete(baseUrl+"/user/"+id)
+    }
+
 }
 
 export default new AdminService;
